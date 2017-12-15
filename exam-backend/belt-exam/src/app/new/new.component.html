@@ -1,0 +1,59 @@
+<div class="container">
+        <br><br>
+    <p>Put the Question and Options here:</p>  
+    <p class="navbar-text navbar-right"><a [routerLink]="['/all']" class="navbar-link">Cancel</a></p>      
+    <form (ngSubmit)="createPoll(f)" #f="ngForm">
+        <div class="form-group">
+        <label for="qstn">Question:</label>
+        <input type="text" class="form-control" name="qstn" [(ngModel)] = "qstn" required minlength="8" #question='ngModel'>
+        </div>
+        <div>
+                <small [hidden]="question.valid || (question.pristine &&  
+                !f.submitted)">
+                <p>Question name should not be blank and should be 8 characters atleast.</p>
+                </small>
+                </div>
+        <div class="form-group">
+        <label for="option1">Option 1:</label>
+        <input type="text" class="form-control" name="option1" [(ngModel)] = "option1" required minlength="3" #opt1='ngModel'>
+        </div>
+        <div>
+                <small [hidden]="opt1.valid || (opt1.pristine &&  
+                !f.submitted)">
+                <p>Option should not be blank and should be 3 characters atleast.</p>
+                </small>
+                </div>
+        <div class="form-group">
+         <label for="option2">Option 2:</label>
+        <input type="text" class="form-control" name="option2" [(ngModel)] = "option2" required minlength="3" #opt2='ngModel'>
+         </div>
+         <div>
+                <small [hidden]="opt2.valid || (opt2.pristine &&  
+                !f.submitted)">
+                <p>Option should not be blank and should be 3 characters atleast.</p>
+                </small>
+                </div>
+         <div class="form-group">
+        <label for="opt3">Option 3:</label>
+        <input type="text" class="form-control" name="option3" [(ngModel)] = "option3" required minlength="3" #opt3='ngModel'>
+        </div>
+        <div>
+                <small [hidden]="opt3.valid || (opt3.pristine &&  
+                !f.submitted)">
+                <p>Option should not be blank and should be 3 characters atleast.</p>
+                </small>
+                </div>
+        <div class="form-group">
+        <label for="option4">Option 4:</label>
+        <input type="text" class="form-control" name="option4" [(ngModel)] = "option4" required minlength="3" #opt4='ngModel'>
+        </div>
+        <div>
+                <small [hidden]="opt4.valid || (opt4.pristine &&  
+                !f.submitted)">
+                <p>Option should not be blank and should be 3 characters atleast.</p>
+                </small>
+                </div>
+        <input type="submit" value="Create Poll" [disabled]="!f.form.valid" class="btn btn-primary">
+      </form>
+</div>
+

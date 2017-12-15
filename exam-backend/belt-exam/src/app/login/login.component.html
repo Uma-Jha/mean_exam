@@ -1,0 +1,21 @@
+<div class="container">
+  <br><br>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-group">
+  <label for="username">Your Name:</label>
+  <input type="text" name="username" [(ngModel)] = "username" class="form-control" required #name='ngModel'/>
+  </div>
+  <input type="submit" value="Login" [disabled]="!f.form.valid" class="btn btn-primary">
+</form>
+<div>
+<small [hidden]="name.valid || (name.pristine &&  
+!f.submitted)">
+<p>Name should not be blank.</p>
+</small>
+</div>
+</div>
+
+
+
+    
+    
